@@ -5,7 +5,21 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.join(__dirname, "/dist"),
-    filename: "[name][contenthash].js",
+    filename: "[name].[contenthash].js",
+    clean: true,
+  },
+  optimization: {
+    runtimeChunk: "single",
+    moduleIds: "deterministic",
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
   },
   devtool: "source-map",
   module: {
