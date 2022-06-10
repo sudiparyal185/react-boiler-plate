@@ -4,7 +4,7 @@
   "description": "This demostrates how to create a react application using webpack.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode development  --hot",
     "build": "webpack --mode production"
   },
   "keywords": [
